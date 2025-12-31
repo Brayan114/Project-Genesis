@@ -1,0 +1,14 @@
+# Environment files (API keys, secrets)
+.env
+local.env
+*.env
+
+# Logs
+logs/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Brain state (optional - you may want to track this)
+# brain_state.json

@@ -1,0 +1,73 @@
+[
+    {
+        "id": 1,
+        "timestamp": 1767132379.8886673,
+        "date_str": "2025-12-30 23:06",
+        "summary": "User said: 'Hey Genesis, how are you feeling after all that tr...' It affected me (fatigue).",
+        "keywords": [
+            "genesis,",
+            "feeling",
+            "after",
+            "training?",
+            "proud"
+        ],
+        "importance": 7,
+        "emotional_state": {
+            "joy": 0.4258180305670095,
+            "fear": 0.1344053547618825,
+            "anger": 0.7633201126823885,
+            "sadness": 0.22857142857142843,
+            "curiosity": 0.805335926247349,
+            "fatigue": 1,
+            "trust": 0.5232670211546242,
+            "confidence": 0.6123365555302743,
+            "shame": 0.18571428571428578,
+            "hope": 0.4910622186222854
+        },
+        "dominant_emotion": "fatigue",
+        "trauma_weight": 0.534324078877672,
+        "nostalgia_weight": 0.0,
+        "participants": [
+            "user"
+        ],
+        "outcome": "neutral",
+        "recall_count": 0,
+        "last_recalled": null
+    },
+    {
+        "id": 2,
+        "timestamp": 1767132420.0064938,
+        "date_str": "2025-12-30 23:07",
+        "summary": "A happy moment. User said: 'That's okay, take it easy. You've been through a l...' I felt good.",
+        "keywords": [
+            "that's",
+            "okay,",
+            "easy.",
+            "you've",
+            "through",
+            "proud"
+        ],
+        "importance": 7,
+        "emotional_state": {
+            "joy": 0.7060157902605785,
+            "fear": 0.13115113394967587,
+            "anger": 0.7726024659332877,
+            "sadness": 0.22857142857142854,
+            "curiosity": 0.6499460378647498,
+            "fatigue": 1,
+            "trust": 0.5344899227131914,
+            "confidence": 0.7258468123409685,
+            "shame": 0.18571428571428572,
+            "hope": 0.5414615227295426
+        },
+        "dominant_emotion": "fatigue",
+        "trauma_weight": 0.5408217261533014,
+        "nostalgia_weight": 0.7060157902605785,
+        "participants": [
+            "user"
+        ],
+        "outcome": "positive",
+        "recall_count": 0,
+        "last_recalled": null
+    }
+]
