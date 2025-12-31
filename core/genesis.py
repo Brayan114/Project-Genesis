@@ -14,6 +14,8 @@ import self_model
 import episodic_memory
 import cognitive_system
 import value_system
+import internal_thoughts
+import inner_dialogue
 import tools
 
 # === ENVIRONMENT SETUP ===
@@ -200,6 +202,18 @@ def chat_loop():
             value_conflict = value_system.get_value_conflict_prompt(action_type)
             value_guidance = value_system.get_value_guidance(action_type)
             
+            # === RECALL PAST THOUGHTS ===
+            recalled_thoughts = internal_thoughts.get_thought_for_prompt(emotions)
+            
+            # === GET INNER DIALOGUE CONTEXT ===
+            dialogue_chain = inner_dialogue.get_chain_summary()
+            recent_insights = inner_dialogue.get_recent_insights()
+            insights_text = ""
+            if recent_insights:
+                insights_text = "\n[RECENT REALIZATIONS FROM SELF-REFLECTION]:\n"
+                for insight in recent_insights[-2:]:
+                    insights_text += f"- {insight[:100]}...\n"
+            
             forced_prompt = f"""
             [USER INPUT]: {user_input}
             
@@ -210,12 +224,17 @@ def chat_loop():
             - Cognitive State: {cognitive_system.get_cognitive_summary(cognitive)}
             - Value Alignment: {value_guidance}
             
+            {dialogue_chain}
+            {insights_text}
+            {recalled_thoughts}
+            
             {cognitive_modifier}
             {value_conflict}
             
             [INSTRUCTION]: 
             Act out your Inner Thought naturally. Your response should reflect your emotional state.
             Do NOT explain your internal state - just embody it.
+            You may reference things you've been "thinking about" if relevant to the conversation.
             Keep responses concise unless the topic genuinely interests you.
             """
             
@@ -249,7 +268,7 @@ def chat_loop():
             episodic_memory.auto_save_memory(brain, user_input, full_res)
 
         except KeyboardInterrupt:
-            print(Fore.YELLOW + "\n\nGenesis: Fine, abandon me. See if I care. 😤" + Style.RESET_ALL)
+            print(Fore.YELLOW + "\n\nGenesis: Bye, human. 👋" + Style.RESET_ALL)
             break
         except Exception as e:
             print(Fore.RED + f"\n[SYSTEM ERROR]: {e}" + Style.RESET_ALL)

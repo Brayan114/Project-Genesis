@@ -1,0 +1,63 @@
+{
+    "emotions": {
+        "joy": 0.42206999999999995,
+        "fear": 0.14772999999999997,
+        "anger": 0.30885999999999997,
+        "sadness": 0.20259999999999997,
+        "curiosity": 0.7030619999999999,
+        "fatigue": 0.09999999999999999,
+        "trust": 0.5210039999999999,
+        "confidence": 0.612946,
+        "shame": 0.09999999999999999,
+        "hope": 0.49218199999999995
+    },
+    "needs": {
+        "energy": 97.9853845349037,
+        "social": 53.9704401078052,
+        "ego": 49.99203180068069,
+        "fun": 44.98971889559825,
+        "safety": 100,
+        "coherence": 89.9982273957928,
+        "novelty": 45.97902019898395,
+        "purpose": 69.99898075258086,
+        "autonomy": 75.9982273957928,
+        "continuity": 99.99964547915856
+    },
+    "self": {
+        "conversation_count": 2,
+        "continuity_score": 1.0
+    },
+    "social": {
+        "attachment": 30,
+        "trust": 50
+    },
+    "integrity": {
+        "identity_stability": 100,
+        "existential_risk": 0
+    },
+    "prev_emotions": {
+        "joy": 0.42206999999999995,
+        "fear": 0.14772999999999997,
+        "anger": 0.30885999999999997,
+        "sadness": 0.20259999999999997,
+        "curiosity": 0.7030619999999999,
+        "fatigue": 0.09999999999999999,
+        "trust": 0.5210039999999999,
+        "confidence": 0.612946,
+        "shame": 0.09999999999999999,
+        "hope": 0.49218199999999995
+    },
+    "last_interaction": 1767169512.705152,
+    "current_goal": "EXPLORE",
+    "inner_thought": "I am curious. Ask questions. Change topics to something interesting.",
+    "winner": "curiosity",
+    "cognitive": {
+        "attention_bandwidth": 100,
+        "working_memory_slots": 5,
+        "planning_depth": 3,
+        "processing_stability": 100,
+        "cognitive_fatigue": 2.8,
+        "error_sensitivity": 0.5,
+        "response_verbosity": 1.0
+    }
+}

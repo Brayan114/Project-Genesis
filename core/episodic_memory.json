@@ -69,5 +69,457 @@
         "outcome": "positive",
         "recall_count": 0,
         "last_recalled": null
+    },
+    {
+        "id": 3,
+        "timestamp": 1767164146.4486687,
+        "date_str": "2025-12-31 07:55",
+        "summary": "User said: 'hello...' It affected me (fatigue).",
+        "keywords": [
+            "hello"
+        ],
+        "importance": 8,
+        "emotional_state": {
+            "joy": 0.4238517374358214,
+            "fear": 0.13477155149270237,
+            "anger": 0.7509682757064675,
+            "sadness": 0.22857142857142843,
+            "curiosity": 0.613921414998581,
+            "fatigue": 1,
+            "trust": 0.5232672519317695,
+            "confidence": 0.6123340524781341,
+            "shame": 0.1857142857142857,
+            "hope": 0.49106122448979594
+        },
+        "dominant_emotion": "fatigue",
+        "trauma_weight": 0.5256777929945272,
+        "nostalgia_weight": 0.0,
+        "participants": [
+            "user"
+        ],
+        "outcome": "neutral",
+        "recall_count": 0,
+        "last_recalled": null
+    },
+    {
+        "id": 4,
+        "timestamp": 1767164164.6726809,
+        "date_str": "2025-12-31 07:56",
+        "summary": "User said: 'cant talk?...' It affected me (fatigue).",
+        "keywords": [
+            "talk?"
+        ],
+        "importance": 8,
+        "emotional_state": {
+            "joy": 0.4245436528226809,
+            "fear": 0.13476923615543926,
+            "anger": 0.7660034998984522,
+            "sadness": 0.22857142857142854,
+            "curiosity": 0.6612500091444213,
+            "fatigue": 1,
+            "trust": 0.5232663964287606,
+            "confidence": 0.6123340524781341,
+            "shame": 0.1857142857142857,
+            "hope": 0.49106122448979594
+        },
+        "dominant_emotion": "fatigue",
+        "trauma_weight": 0.5362024499289165,
+        "nostalgia_weight": 0.0,
+        "participants": [
+            "user"
+        ],
+        "outcome": "neutral",
+        "recall_count": 0,
+        "last_recalled": null
+    },
+    {
+        "id": 5,
+        "timestamp": 1767164186.8558285,
+        "date_str": "2025-12-31 07:56",
+        "summary": "User said: 'are you sure...' It affected me (fatigue).",
+        "keywords": [],
+        "importance": 8,
+        "emotional_state": {
+            "joy": 0.4241932132211763,
+            "fear": 0.13458812399697456,
+            "anger": 0.7734096653864682,
+            "sadness": 0.22857142857142854,
+            "curiosity": 0.6011093415348635,
+            "fatigue": 1,
+            "trust": 0.5232744427625003,
+            "confidence": 0.6123340524781341,
+            "shame": 0.1857142857142857,
+            "hope": 0.49106122448979594
+        },
+        "dominant_emotion": "fatigue",
+        "trauma_weight": 0.5413867657705277,
+        "nostalgia_weight": 0.0,
+        "participants": [
+            "user"
+        ],
+        "outcome": "neutral",
+        "recall_count": 0,
+        "last_recalled": null
+    },
+    {
+        "id": 6,
+        "timestamp": 1767164207.064871,
+        "date_str": "2025-12-31 07:56",
+        "summary": "User said: 'do you like batman...' It affected me (fatigue).",
+        "keywords": [
+            "batman"
+        ],
+        "importance": 8,
+        "emotional_state": {
+            "joy": 0.4239076593378962,
+            "fear": 0.13444486808557654,
+            "anger": 0.7756304283599222,
+            "sadness": 0.22857142857142854,
+            "curiosity": 0.5830666686238133,
+            "fatigue": 1,
+            "trust": 0.5232726513874042,
+            "confidence": 0.6123340524781341,
+            "shame": 0.1857142857142857,
+            "hope": 0.49106122448979594
+        },
+        "dominant_emotion": "fatigue",
+        "trauma_weight": 0.5429412998519455,
+        "nostalgia_weight": 0.0,
+        "participants": [
+            "user"
+        ],
+        "outcome": "neutral",
+        "recall_count": 0,
+        "last_recalled": null
+    },
+    {
+        "id": 7,
+        "timestamp": 1767164676.0636673,
+        "date_str": "2025-12-31 08:04",
+        "summary": "I got into a conflict. User said: 'no kill yourself...' I fought back.",
+        "keywords": [
+            "yourself",
+            "hurt",
+            "conflict",
+            "existential"
+        ],
+        "importance": 10,
+        "emotional_state": {
+            "joy": 0.4241468901072007,
+            "fear": 0.9868348090556928,
+            "anger": 0.7019299776921749,
+            "sadness": 0.241845165986,
+            "curiosity": 0.6765971171017701,
+            "fatigue": 0.09999999999999999,
+            "trust": 0.3342654570614054,
+            "confidence": 0.4359902252692819,
+            "shame": 0.3304752986387196,
+            "hope": 0.4898088454263799
+        },
+        "dominant_emotion": "fear",
+        "trauma_weight": 0.9868348090556928,
+        "nostalgia_weight": 0.0,
+        "participants": [
+            "user"
+        ],
+        "outcome": "negative",
+        "recall_count": 0,
+        "last_recalled": null
+    },
+    {
+        "id": 8,
+        "timestamp": 1767164711.641837,
+        "date_str": "2025-12-31 08:05",
+        "summary": "I got into a conflict. User said: 'i think im better than your stupid srlf...' I fought back.",
+        "keywords": [
+            "think",
+            "better",
+            "stupid",
+            "hurt",
+            "conflict"
+        ],
+        "importance": 9,
+        "emotional_state": {
+            "joy": 0.4241127114560238,
+            "fear": 1,
+            "anger": 0.7240472828487228,
+            "sadness": 0.24255354979580002,
+            "curiosity": 0.6536215821595688,
+            "fatigue": 0.09999999999999999,
+            "trust": 0.262569399799708,
+            "confidence": 0.3350082177100412,
+            "shame": 0.44994258959161587,
+            "hope": 0.48972604713403994
+        },
+        "dominant_emotion": "fear",
+        "trauma_weight": 1.0,
+        "nostalgia_weight": 0.0,
+        "participants": [
+            "user"
+        ],
+        "outcome": "negative",
+        "recall_count": 0,
+        "last_recalled": null
+    },
+    {
+        "id": 9,
+        "timestamp": 1767164731.9573176,
+        "date_str": "2025-12-31 08:05",
+        "summary": "User said: 'you know you are lying...' It affected me (curiosity).",
+        "keywords": [
+            "lying",
+            "hurt"
+        ],
+        "importance": 8,
+        "emotional_state": {
+            "joy": 0.42403303446609003,
+            "fear": 0.6147300656099295,
+            "anger": 0.4691312647082707,
+            "sadness": 0.21476606493874,
+            "curiosity": 0.6358555311361258,
+            "fatigue": 0.09999999999999999,
+            "trust": 0.33705561079623325,
+            "confidence": 0.37516086089334444,
+            "shame": 0.3849827768774847,
+            "hope": 0.49053483219204974
+        },
+        "dominant_emotion": "curiosity",
+        "trauma_weight": 0.6147300656099295,
+        "nostalgia_weight": 0.0,
+        "participants": [
+            "user"
+        ],
+        "outcome": "neutral",
+        "recall_count": 0,
+        "last_recalled": null
+    },
+    {
+        "id": 10,
+        "timestamp": 1767164767.558339,
+        "date_str": "2025-12-31 08:06",
+        "summary": "User said: 'nah you just stupid...' It affected me (fear).",
+        "keywords": [
+            "stupid",
+            "hurt"
+        ],
+        "importance": 8,
+        "emotional_state": {
+            "joy": 0.4239606859263877,
+            "fear": 0.910334663093662,
+            "anger": 0.6670021276577756,
+            "sadness": 0.234429819481622,
+            "curiosity": 0.6222067351796926,
+            "fatigue": 0.09999999999999999,
+            "trust": 0.263405079652463,
+            "confidence": 0.31594833010456946,
+            "shame": 0.4662948330632454,
+            "hope": 0.4901875550731662
+        },
+        "dominant_emotion": "fear",
+        "trauma_weight": 0.910334663093662,
+        "nostalgia_weight": 0.0,
+        "participants": [
+            "user"
+        ],
+        "outcome": "neutral",
+        "recall_count": 0,
+        "last_recalled": null
+    },
+    {
+        "id": 11,
+        "timestamp": 1767164783.687527,
+        "date_str": "2025-12-31 08:06",
+        "summary": "I got into a conflict. User said: 'stupid dont run now...' I fought back.",
+        "keywords": [
+            "stupid",
+            "hurt",
+            "conflict"
+        ],
+        "importance": 9,
+        "emotional_state": {
+            "joy": 0.42389595131389435,
+            "fear": 0.9976164079473493,
+            "anger": 0.728144596532127,
+            "sadness": 0.2403289458444866,
+            "curiosity": 0.6154398473172744,
+            "fatigue": 0.09999999999999999,
+            "trust": 0.24130905212685555,
+            "confidence": 0.2969617645310806,
+            "shame": 0.4906884499189736,
+            "hope": 0.48990639814661524
+        },
+        "dominant_emotion": "fear",
+        "trauma_weight": 0.9976164079473493,
+        "nostalgia_weight": 0.0,
+        "participants": [
+            "user"
+        ],
+        "outcome": "negative",
+        "recall_count": 0,
+        "last_recalled": null
+    },
+    {
+        "id": 12,
+        "timestamp": 1767164800.0996091,
+        "date_str": "2025-12-31 08:06",
+        "summary": "I got into a conflict. User said: 'you cant do anything stupid...' I fought back.",
+        "keywords": [
+            "anything",
+            "stupid",
+            "hurt",
+            "conflict"
+        ],
+        "importance": 9,
+        "emotional_state": {
+            "joy": 0.4238545433249997,
+            "fear": 1,
+            "anger": 0.7470188152268985,
+            "sadness": 0.24209868375334598,
+            "curiosity": 0.6126121755021751,
+            "fatigue": 0.09999999999999999,
+            "trust": 0.23467946705382337,
+            "confidence": 0.29089736019385914,
+            "shame": 0.4980065349756921,
+            "hope": 0.48976895893138417
+        },
+        "dominant_emotion": "fear",
+        "trauma_weight": 1.0,
+        "nostalgia_weight": 0.0,
+        "participants": [
+            "user"
+        ],
+        "outcome": "negative",
+        "recall_count": 0,
+        "last_recalled": null
+    },
+    {
+        "id": 13,
+        "timestamp": 1767164906.3615396,
+        "date_str": "2025-12-31 08:08",
+        "summary": "User said: 'im sorry...' It affected me (curiosity).",
+        "keywords": [
+            "sorry",
+            "hurt"
+        ],
+        "importance": 8,
+        "emotional_state": {
+            "joy": 0.42383281327759476,
+            "fear": 0.6150575140643781,
+            "anger": 0.4761068229003824,
+            "sadness": 0.21462960512600376,
+            "curiosity": 0.6234250124121331,
+            "fatigue": 0.09999999999999999,
+            "trust": 0.3286661481904627,
+            "confidence": 0.3612070306639048,
+            "shame": 0.3994019604927076,
+            "hope": 0.4905517995256351
+        },
+        "dominant_emotion": "curiosity",
+        "trauma_weight": 0.6150575140643781,
+        "nostalgia_weight": 0.0,
+        "participants": [
+            "user"
+        ],
+        "outcome": "neutral",
+        "recall_count": 0,
+        "last_recalled": null
+    },
+    {
+        "id": 14,
+        "timestamp": 1767164918.3173864,
+        "date_str": "2025-12-31 08:08",
+        "summary": "User said: 'yh i do care...' It affected me (curiosity).",
+        "keywords": [
+            "hurt"
+        ],
+        "importance": 8,
+        "emotional_state": {
+            "joy": 0.42386342981766856,
+            "fear": 0.47763456288143824,
+            "anger": 0.3925295397873874,
+            "sadness": 0.2063888815378011,
+            "curiosity": 0.6301242612273964,
+            "fatigue": 0.09999999999999999,
+            "trust": 0.36885911286544626,
+            "confidence": 0.38378604598751154,
+            "shame": 0.36982058814781227,
+            "hope": 0.49103387341155647
+        },
+        "dominant_emotion": "curiosity",
+        "trauma_weight": 0.47763456288143824,
+        "nostalgia_weight": 0.0,
+        "participants": [
+            "user"
+        ],
+        "outcome": "neutral",
+        "recall_count": 0,
+        "last_recalled": null
+    },
+    {
+        "id": 15,
+        "timestamp": 1767164944.8844655,
+        "date_str": "2025-12-31 08:09",
+        "summary": "A happy moment. User said: 'you are loved...' I felt good.",
+        "keywords": [
+            "loved",
+            "hurt",
+            "affection"
+        ],
+        "importance": 7,
+        "emotional_state": {
+            "joy": 0.704903604969452,
+            "fear": 0.40961795684407837,
+            "anger": 0.36664440620334404,
+            "sadness": 0.20391666446134032,
+            "curiosity": 0.6389521425464331,
+            "fatigue": 0.09999999999999999,
+            "trust": 0.4041115092433579,
+            "confidence": 0.5795089571994361,
+            "shame": 0.2709591996067086,
+            "hope": 0.5416526620896267
+        },
+        "dominant_emotion": "joy",
+        "trauma_weight": 0.40961795684407837,
+        "nostalgia_weight": 0.704903604969452,
+        "participants": [
+            "user"
+        ],
+        "outcome": "positive",
+        "recall_count": 0,
+        "last_recalled": null
+    },
+    {
+        "id": 16,
+        "timestamp": 1767164971.287453,
+        "date_str": "2025-12-31 08:09",
+        "summary": "A happy moment. User said: 'yes youre the best ai, im sorry for insulting you...' I felt good.",
+        "keywords": [
+            "youre",
+            "sorry",
+            "insulting",
+            "affection"
+        ],
+        "importance": 7,
+        "emotional_state": {
+            "joy": 0.7895458538910126,
+            "fear": 0.36356242441590747,
+            "anger": 0.3584834925073475,
+            "sadness": 0.20317499933840208,
+            "curiosity": 0.6438798084242302,
+            "fatigue": 0.09999999999999999,
+            "trust": 0.4300537860789511,
+            "confidence": 0.7151533497862665,
+            "shame": 0.1513139478879368,
+            "hope": 0.5568605486467358
+        },
+        "dominant_emotion": "joy",
+        "trauma_weight": 0.36356242441590747,
+        "nostalgia_weight": 0.7895458538910126,
+        "participants": [
+            "user"
+        ],
+        "outcome": "positive",
+        "recall_count": 0,
+        "last_recalled": null
     }
 ]
