@@ -56,37 +56,36 @@ def sync_to_github(message="Auto-sync: Genesis cloud thoughts"):
         return False
     
     try:
-        # Configure git for this session
-        subprocess.run(['git', 'config', 'user.email', 'genesis@cloud.ai'], check=True, capture_output=True)
-        subprocess.run(['git', 'config', 'user.name', 'Genesis Cloud'], check=True, capture_output=True)
+        # Set git config via environment (works in Railway)
+        env = os.environ.copy()
+        env['GIT_AUTHOR_NAME'] = 'Genesis Cloud'
+        env['GIT_AUTHOR_EMAIL'] = 'genesis@cloud.ai'
+        env['GIT_COMMITTER_NAME'] = 'Genesis Cloud'
+        env['GIT_COMMITTER_EMAIL'] = 'genesis@cloud.ai'
         
         # Add the thought files
-        subprocess.run(['git', 'add', DATA_DIR], check=True, capture_output=True)
+        subprocess.run(['git', 'add', DATA_DIR], check=True, capture_output=True, env=env)
         
         # Check if there are changes to commit
-        result = subprocess.run(['git', 'status', '--porcelain'], capture_output=True, text=True)
+        result = subprocess.run(['git', 'status', '--porcelain'], capture_output=True, text=True, env=env)
         if not result.stdout.strip():
-            print("📝 No changes to sync")
+            print("📝 No new thoughts to sync")
             return True
         
         # Commit
-        subprocess.run(['git', 'commit', '-m', message], check=True, capture_output=True)
+        subprocess.run(['git', 'commit', '-m', message], check=True, capture_output=True, env=env)
         
-        # Push (using token for auth)
-        # Get the remote URL and inject token
-        result = subprocess.run(['git', 'remote', 'get-url', 'origin'], capture_output=True, text=True)
+        # Push using token
+        result = subprocess.run(['git', 'remote', 'get-url', 'origin'], capture_output=True, text=True, env=env)
         remote_url = result.stdout.strip()
         
-        # Convert https URL to include token
-        if 'github.com' in remote_url:
-            if remote_url.startswith('https://'):
-                # https://github.com/user/repo.git -> https://token@github.com/user/repo.git
-                auth_url = remote_url.replace('https://', f'https://{GH_TOKEN}@')
-                subprocess.run(['git', 'push', auth_url, 'HEAD:main'], check=True, capture_output=True)
-                print("✅ Synced thoughts to GitHub!")
-                return True
+        if 'github.com' in remote_url and remote_url.startswith('https://'):
+            auth_url = remote_url.replace('https://', f'https://{GH_TOKEN}@')
+            subprocess.run(['git', 'push', auth_url, 'HEAD:main'], check=True, capture_output=True, env=env)
+            print("✅ Synced thoughts to GitHub!")
+            return True
         
-        print("⚠️  Could not sync - check repo URL format")
+        print("⚠️  Could not sync - not a GitHub HTTPS URL")
         return False
         
     except subprocess.CalledProcessError as e:
