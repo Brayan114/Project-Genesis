@@ -48,48 +48,75 @@ BRAIN_FILE = f'{DATA_DIR}/brain_state.json'
 DIALOGUE_FILE = f'{DATA_DIR}/inner_dialogue.json'
 THOUGHTS_FILE = f'{DATA_DIR}/thoughts_log.json'
 
-# === GITHUB SYNC ===
-def sync_to_github(message="Auto-sync: Genesis cloud thoughts"):
-    """Push thought files back to GitHub."""
+# === GIST ID - Set this after first run ===
+GIST_ID = os.getenv("GIST_ID")  # Will be printed on first run
+
+# === GITHUB GIST SYNC (No git needed!) ===
+def sync_to_gist():
+    """Save thoughts to a GitHub Gist - persists across container restarts."""
     if not GH_TOKEN:
-        print("⚠️  GH_TOKEN not set - skipping GitHub sync")
+        print("⚠️  GH_TOKEN not set - thoughts won't persist!")
         return False
     
+    import urllib.request
+    import urllib.error
+    
     try:
-        # Set git config via environment (works in Railway)
-        env = os.environ.copy()
-        env['GIT_AUTHOR_NAME'] = 'Genesis Cloud'
-        env['GIT_AUTHOR_EMAIL'] = 'genesis@cloud.ai'
-        env['GIT_COMMITTER_NAME'] = 'Genesis Cloud'
-        env['GIT_COMMITTER_EMAIL'] = 'genesis@cloud.ai'
+        # Load current thoughts
+        thoughts_data = "{}"
+        brain_data = "{}"
+        dialogue_data = "{}"
         
-        # Add the thought files
-        subprocess.run(['git', 'add', DATA_DIR], check=True, capture_output=True, env=env)
+        if os.path.exists(THOUGHTS_FILE):
+            with open(THOUGHTS_FILE, 'r') as f:
+                thoughts_data = f.read()
+        if os.path.exists(BRAIN_FILE):
+            with open(BRAIN_FILE, 'r') as f:
+                brain_data = f.read()
+        if os.path.exists(DIALOGUE_FILE):
+            with open(DIALOGUE_FILE, 'r') as f:
+                dialogue_data = f.read()
         
-        # Check if there are changes to commit
-        result = subprocess.run(['git', 'status', '--porcelain'], capture_output=True, text=True, env=env)
-        if not result.stdout.strip():
-            print("📝 No new thoughts to sync")
+        gist_content = {
+            "description": "Genesis Cloud Thoughts - Auto-synced",
+            "public": False,
+            "files": {
+                "thoughts_log.json": {"content": thoughts_data or "[]"},
+                "brain_state.json": {"content": brain_data or "{}"},
+                "inner_dialogue.json": {"content": dialogue_data or "{}"}
+            }
+        }
+        
+        headers = {
+            "Authorization": f"token {GH_TOKEN}",
+            "Accept": "application/vnd.github.v3+json",
+            "Content-Type": "application/json"
+        }
+        
+        if GIST_ID:
+            # Update existing gist
+            url = f"https://api.github.com/gists/{GIST_ID}"
+            method = "PATCH"
+        else:
+            # Create new gist
+            url = "https://api.github.com/gists"
+            method = "POST"
+        
+        data = json.dumps(gist_content).encode('utf-8')
+        req = urllib.request.Request(url, data=data, headers=headers, method=method)
+        
+        with urllib.request.urlopen(req, timeout=30) as response:
+            result = json.loads(response.read().decode())
+            gist_id = result.get("id")
+            
+            if not GIST_ID:
+                print(f"✅ Created Gist! Add GIST_ID={gist_id} to Railway variables")
+            else:
+                print(f"✅ Synced to Gist!")
             return True
-        
-        # Commit
-        subprocess.run(['git', 'commit', '-m', message], check=True, capture_output=True, env=env)
-        
-        # Push using token
-        result = subprocess.run(['git', 'remote', 'get-url', 'origin'], capture_output=True, text=True, env=env)
-        remote_url = result.stdout.strip()
-        
-        if 'github.com' in remote_url and remote_url.startswith('https://'):
-            auth_url = remote_url.replace('https://', f'https://{GH_TOKEN}@')
-            subprocess.run(['git', 'push', auth_url, 'HEAD:main'], check=True, capture_output=True, env=env)
-            print("✅ Synced thoughts to GitHub!")
-            return True
-        
-        print("⚠️  Could not sync - not a GitHub HTTPS URL")
-        return False
-        
-    except subprocess.CalledProcessError as e:
-        print(f"⚠️  Git sync failed: {e}")
+            
+    except urllib.error.HTTPError as e:
+        print(f"⚠️  Gist sync failed: {e.code} {e.reason}")
         return False
     except Exception as e:
         print(f"⚠️  Sync error: {e}")
@@ -304,8 +331,8 @@ def main():
             # Status and sync every SYNC_INTERVAL cycles
             if cycle % SYNC_INTERVAL == 0:
                 print(f"--- Cycle {cycle} | Chain: {dialogue.get('chain_depth', 0)}/5 ---")
-                # Sync thoughts to GitHub
-                sync_to_github(f"Auto-sync: {cycle} thoughts processed")
+                # Sync thoughts to GitHub Gist
+                sync_to_gist()
             
             time.sleep(CHECK_INTERVAL)
             
